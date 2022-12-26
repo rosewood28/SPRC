@@ -1,0 +1,17 @@
+unde se afla afla baza de date si ce trebuie ea sa contina?
+utilizatorii si datele despre ei?
+
+Principiul de baza este sa intelegi rpc. (0)Daca nu ai inteles rpc, incepe cu labul 2 (1-3 ore).
+(1)Creaza o baza de date minimala - eu am folosit c++, vector<User> ca fiind baza mea de date.
+C++ (1 ora) C (2 - 3 ore)
+(2) defineste homework.x cu structurile aferente de la inceput (ar trebui sa ai 4 functii, iar ca structuri,
+ eu am folosit 2: struct request_info si response_info, astfel ca toate functiile primeau aceeasi strutura si
+  returnau ac structura care encapsula toate datele necesare - bonus nu folositi pointeri, folositi char[150] 
+  unde s stringuri. Iar unde creati voi stringuri, alocati le dinamic. Daca va da seg fault in veselie la 
+  inceput, e managementul memoriei)
+(15-30 de min)
+(3) Server code
+C++ (1-2 ore) C ?
+(4) Client code + debugging cu serverul
+aici se poate si C si C++, nu e mare lucru.
+Debugging (1-4 ore)

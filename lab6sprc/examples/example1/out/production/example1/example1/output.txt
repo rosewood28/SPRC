@@ -1,0 +1,117 @@
+Client started with maxStorageSpace=20480 and maxTimeToKeep=20000
+Pagina http://www.yahoo.com a fost adaugata in cache, 1 accesari
+Pagina http://google.com a fost adaugata in cache, 1 accesari
+Continut cache:
+
+http://google.com, 1
+http://www.yahoo.com, 1
+http://httpforever.com, 1
+Eliminare http://httpforever.com din cache, a avut 1 accesari (LFU)
+Pagina http://httpforever.com a fost adaugata in cache, 1 accesari
+Pagina http://google.com era deja in cache, 1 accesari
+Pagina http://yahoo.com a fost adaugata in cache, 1 accesari
+Pagina http://google.com era deja in cache, 2 accesari
+Pagina http://www.romania-actualitati.ro a fost adaugata in cache, 1 accesari
+Pagina http://www.yahoo.com era deja in cache, 1 accesari
+Pagina http://google.com era deja in cache, 3 accesari
+Pagina http://www.yahoo.com era deja in cache, 2 accesari
+Pagina http://google.com era deja in cache, 4 accesari
+Continut cache:
+
+http://google.com, 5
+http://www.yahoo.com, 3
+http://yahoo.com, 1
+http://www.romania-actualitati.ro, 1
+http://httpforever.com, 1
+Eliminare http://httpforever.com din cache, a avut 1 accesari (LFU)
+Pagina http://httpforever.com a fost adaugata in cache, 1 accesari
+Pagina http://google.com era deja in cache, 5 accesari
+Pagina http://yahoo.com era deja in cache, 1 accesari
+Pagina http://google.com era deja in cache, 6 accesari
+Pagina http://www.romania-actualitati.ro era deja in cache, 1 accesari
+Pagina http://www.yahoo.com era deja in cache, 3 accesari
+Pagina http://google.com era deja in cache, 7 accesari
+Pagina http://www.yahoo.com a fost adaugata in cache, 1 accesari
+Pagina http://google.com a fost adaugata in cache, 1 accesari
+Continut cache:
+
+http://google.com, 1
+http://www.yahoo.com, 1
+http://yahoo.com, 2
+http://www.romania-actualitati.ro, 2
+http://httpforever.com, 1
+Eliminare http://httpforever.com din cache, a avut 1 accesari (LFU)
+Pagina http://httpforever.com a fost adaugata in cache, 1 accesari
+Pagina http://google.com era deja in cache, 1 accesari
+Pagina http://yahoo.com a fost adaugata in cache, 1 accesari
+Pagina http://google.com era deja in cache, 2 accesari
+Pagina http://www.romania-actualitati.ro era deja in cache, 2 accesari
+Pagina http://www.yahoo.com era deja in cache, 1 accesari
+Pagina http://google.com era deja in cache, 3 accesari
+Pagina http://www.yahoo.com era deja in cache, 2 accesari
+Pagina http://google.com era deja in cache, 4 accesari
+Continut cache:
+
+http://google.com, 5
+http://www.yahoo.com, 3
+http://yahoo.com, 1
+http://httpforever.com, 1
+Eliminare http://httpforever.com din cache, a avut 1 accesari (LFU)
+Pagina http://httpforever.com a fost adaugata in cache, 1 accesari
+Pagina http://google.com era deja in cache, 5 accesari
+Pagina http://yahoo.com era deja in cache, 1 accesari
+Pagina http://google.com era deja in cache, 6 accesari
+Pagina http://www.romania-actualitati.ro a fost adaugata in cache, 1 accesari
+Pagina http://www.yahoo.com era deja in cache, 3 accesari
+Pagina http://google.com era deja in cache, 7 accesari
+Pagina http://www.yahoo.com era deja in cache, 4 accesari
+Pagina http://google.com era deja in cache, 8 accesari
+Pagina http://httpforever.com a fost adaugata in cache, 1 accesari
+Continut cache:
+
+http://google.com, 1
+http://yahoo.com, 2
+http://www.romania-actualitati.ro, 1
+http://httpforever.com, 1
+Eliminare http://httpforever.com din cache, a avut 1 accesari (LFU)
+Pagina http://google.com a fost adaugata in cache, 1 accesari
+Pagina http://yahoo.com era deja in cache, 2 accesari
+Pagina http://google.com era deja in cache, 1 accesari
+Pagina http://www.romania-actualitati.ro era deja in cache, 1 accesari
+Pagina http://www.yahoo.com a fost adaugata in cache, 1 accesari
+Pagina http://google.com era deja in cache, 2 accesari
+Pagina http://www.yahoo.com era deja in cache, 1 accesari
+Pagina http://google.com era deja in cache, 3 accesari
+Pagina http://httpforever.com a fost adaugata in cache, 1 accesari
+Pagina http://google.com era deja in cache, 4 accesari
+Pagina http://yahoo.com a fost adaugata in cache, 1 accesari
+Pagina http://google.com era deja in cache, 5 accesari
+Pagina http://www.romania-actualitati.ro a fost adaugata in cache, 1 accesari
+Pagina http://www.yahoo.com era deja in cache, 2 accesari
+Pagina http://google.com era deja in cache, 6 accesari
+Pagina http://www.yahoo.com era deja in cache, 3 accesari
+Pagina http://google.com era deja in cache, 7 accesari
+Pagina http://httpforever.com era deja in cache, 1 accesari
+Pagina http://google.com era deja in cache, 8 accesari
+Pagina http://yahoo.com era deja in cache, 1 accesari
+Continut cache:
+
+http://google.com, 1
+http://www.yahoo.com, 4
+http://yahoo.com, 2
+http://www.romania-actualitati.ro, 1
+http://httpforever.com, 2
+Eliminare http://www.romania-actualitati.ro din cache, a avut 1 accesari (LFU)
+Pagina http://google.com a fost adaugata in cache, 1 accesari
+Pagina http://www.romania-actualitati.ro a fost adaugata in cache, 1 accesari
+Pagina http://www.yahoo.com era deja in cache, 4 accesari
+Pagina http://google.com era deja in cache, 1 accesari
+Pagina http://www.yahoo.com a fost adaugata in cache, 1 accesari
+Pagina http://google.com era deja in cache, 2 accesari
+Pagina http://httpforever.com era deja in cache, 2 accesari
+Pagina http://google.com era deja in cache, 3 accesari
+Pagina http://yahoo.com era deja in cache, 2 accesari
+Pagina http://google.com era deja in cache, 4 accesari
+Pagina http://www.romania-actualitati.ro era deja in cache, 1 accesari
+Pagina http://www.yahoo.com era deja in cache, 1 accesari
+Pagina http://google.com era deja in cache, 5 accesari
