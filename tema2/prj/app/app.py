@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/api/countries", methods=["GET"])
 def countriesGet():
-    return "WOAAAA"
+    return "meow"
 # try:
 #     connection = psycopg2.connect(user="postgres",
 #                                 password="postgres",
