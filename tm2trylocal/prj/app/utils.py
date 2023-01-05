@@ -28,12 +28,12 @@ def establishDBconnection():
 
     return connection
 
-def execute(query):
-    try:
-        cursor.execute(insert_query)
-        connection.commit()
-    except:
-        return Response(status=HTTPStatus.CONFLICT)
+def searchInList(elemId, list):
+    for x in list:
+        if x[0] == elemId:
+            return x
+    
+    return None
 
 # def closeDBconnection(connection, cursor):
 #     if (connection):
