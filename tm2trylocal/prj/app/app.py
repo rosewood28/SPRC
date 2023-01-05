@@ -140,6 +140,63 @@ def citiesPost():
 
     return jsonify({'id':last_id}), 201
 
+@app.route("/api/cities", methods=["GET"])
+def citiesGet():
+    cursor.execute("SELECT * from orase")
+    cities_list = cursor.fetchall()
+
+    return convertCitiesToJSON(cities_list), 200
+
+@app.route("/api/cities/country/<int:gotId>", methods=["GET"])
+def citiesGetById(gotId):
+    # Get cities list by country id
+    select_query = "SELECT * from orase WHERE id_tara = " + str(gotId)
+    cursor.execute(select_query)
+    cities_list = cursor.fetchall()
+    
+    return convertCitiesToJSON(cities_list), 200
+    
+# Temperatures methods
+@app.route("/api/temperatures", methods=["POST"])
+def temperaturesPost():
+    # Get and verify query
+    payload = request.get_json(silent=True)
+    print("payload ", payload)
+    if not ('idOras' in payload and 'valoare' in payload):
+        return Response(status=HTTPStatus.BAD_REQUEST)
+
+    # Construct and execute query
+    insertQuery = "INSERT INTO temperaturi (valoare, timestamp, id_oras) VALUES (%s, %s, %s)"
+    now = datetime.datetime.now()
+    itemTuple = (str(payload['valoare']), now, str(payload['idOras']))
+
+    # Conflict if unicity broken or temperature type is not double 
+    try:
+        cursor.execute(insertQuery, itemTuple)
+        connection.commit()
+    except psycopg2.errors.UniqueViolation:
+        connection.rollback()
+        return Response(status=HTTPStatus.CONFLICT)
+    except psycopg2.errors.ForeignKeyViolation:
+        connection.rollback()
+        return Response(status=HTTPStatus.CONFLICT)
+    except psycopg2.errors.InvalidTextRepresentation:
+        connection.rollback()
+        return Response(status=HTTPStatus.CONFLICT)
+
+    # Get last insert id
+    cursor.execute("SELECT currval(pg_get_serial_sequence('orase','id'));") 
+    connection.commit()
+    last_id = cursor.fetchone()[0]
+
+    return jsonify({'id':last_id}), 201
+
+
+
+
+
+
+
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)

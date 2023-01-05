@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, Response, request
 import psycopg2
 from http import HTTPStatus
+import datetime
 
 def establishDBconnection():
     try:
@@ -34,6 +35,14 @@ def searchInList(elemId, list):
             return x
     
     return None
+
+def convertCitiesToJSON(cities_list):
+    json_list = []
+    for c in cities_list:
+        aux = {'id': c[0], 'idTara': c[1], 'nume': c[2], 'lat': c[3], 'lon': c[4]}
+        json_list.append(aux)
+
+    return jsonify(json_list)
 
 # def closeDBconnection(connection, cursor):
 #     if (connection):

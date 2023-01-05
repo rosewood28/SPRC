@@ -5,7 +5,8 @@ DELETE FROM Orase;
 ALTER SEQUENCE orase_id_seq RESTART;
 DELETE FROM Tari;
 ALTER SEQUENCE tari_id_seq RESTART;
-
+DELETE FROM Temperaturi;
+ALTER SEQUENCE temperaturi_id_seq RESTART;
 
 
 CREATE TABLE Tari (
