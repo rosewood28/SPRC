@@ -8,3 +8,11 @@ https://grafana.com/docs/grafana/latest/fundamentals/timeseries/
 https://influxdb-python.readthedocs.io/en/latest/examples.html
 https://stackoverflow.com/questions/34156798/how-to-get-databases-list-at-influxdb-in-v0-8
 https://www.youtube.com/watch?v=49hKs_H5Xf0
+https://grafana.com/tutorials/provision-dashboards-and-data-sources/
+https://grafana.com/docs/grafana/latest/administration/provisioning/
+
+
+de aici am preluat datasource.yml: https://grafana.com/docs/grafana/v8.5/datasources/influxdb/provision-influxdb/
+
+de aici am preluat dashboard.yml: https://grafana.com/docs/grafana/latest/administration/provisioning/ din sectiunea dashboards
+

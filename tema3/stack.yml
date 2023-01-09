@@ -27,18 +27,19 @@ services:
             - database
         restart: always
 
-    # grafana:
-    #     container_name: grafana
-    #     image: grafana/grafana:latest
-    #     ports:
-    #         - '80:3000'
-    #     volumes:
-    #         - grafana:/var/lib/grafana
-    #     environment:
-    #         - GF_SECURITY_ADMIN_USER=asistent
-    #         - GF_SECURITY_ADMIN_PASSWORD=grafanaSPRC2021
-    #     depends_on:
-    #         - database
+    grafana:
+        container_name: grafana
+        image: grafana/grafana:latest
+        ports:
+            - '80:3000'
+        volumes:
+            - grafana:/var/lib/grafana
+            - ./provisioning/:/etc/grafana/provisioning
+        environment:
+            - GF_SECURITY_ADMIN_USER=asistent
+            - GF_SECURITY_ADMIN_PASSWORD=grafanaSPRC2021
+        depends_on:
+            - database
 
 volumes:
     influxdb_data:

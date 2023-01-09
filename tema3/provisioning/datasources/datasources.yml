@@ -1,0 +1,13 @@
+apiVersion: 1
+
+datasources:
+  - name: InfluxDB_v1
+    type: influxdb
+    access: proxy
+    database: tema3_db
+    user: grafana
+    url: http://database:8086
+    jsonData:
+      httpMode: GET
+    secureJsonData:
+      password: grafana
