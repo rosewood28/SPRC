@@ -16,3 +16,15 @@ de aici am preluat datasource.yml: https://grafana.com/docs/grafana/v8.5/datasou
 
 de aici am preluat dashboard.yml: https://grafana.com/docs/grafana/latest/administration/provisioning/ din sectiunea dashboards
 
+----swarm init output
+rosewood@sysadm-MRC-WX0:~/Desktop/sprc/tema3$ docker swarm init
+Swarm initialized: current node (g9ceylqh7gqqyqac7a7cc6g1n) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-2b2uflomsa0v03xhkd9jm04pl5rztih073jftc2q8ol18r34pw-1sqbiynatpdiv2pft2m6bwspv 192.168.43.197:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+
+rosewood@sysadm-MRC-WX0:~/Desktop/sprc/tema3$ 
+

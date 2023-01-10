@@ -2,22 +2,28 @@ version: "3.3"
 
 services:
     mosquitto:
-        container_name: mosquitto
+        #container_name: mosquitto
         image: eclipse-mosquitto:1.6
         ports:
             - '1883:1883'
+        networks:
+            - mosquitto-adapter
 
     database:
-        container_name: database
+        #container_name: database
         image: influxdb:1.8-alpine
         ports:
             - '8086:8086'
         volumes:
             - influxdb_data:/var/lib/influxdb
+        networks:
+            - adapter-database
+            - database-grafana
 
     adapter:
-        container_name: adapter
-        build: ./adapterMQTT-DB
+        #container_name: adapter
+        #build: ./adapterMQTT-DB
+        image: adapter
         volumes:
             - ./adapterMQTT-DB:/adapterMQTT-DB
         environment:
@@ -25,10 +31,12 @@ services:
         depends_on:
             - mosquitto
             - database
-        restart: always
+        networks:
+            - mosquitto-adapter
+            - adapter-database
 
     grafana:
-        container_name: grafana
+        #container_name: grafana
         image: grafana/grafana:latest
         ports:
             - '80:3000'
@@ -40,9 +48,16 @@ services:
             - GF_SECURITY_ADMIN_PASSWORD=grafanaSPRC2021
         depends_on:
             - database
+        networks:
+            - database-grafana
 
 volumes:
     influxdb_data:
     grafana:
+
+networks:
+    mosquitto-adapter:
+    adapter-database:
+    database-grafana:
 
 
