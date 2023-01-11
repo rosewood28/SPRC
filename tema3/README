@@ -1,0 +1,47 @@
+Stan Sabina 341C3
+
+Tema 3
+
+Pentru rulare si repornire se pot utiliza scripturile run.sh si stop.sh din folderul ce contine stack.yml.
+Aceste utilizeaza comenzile din enunt la care se adauga initializarea si stergerea swarmului prin
+docker swarm init si docker swarm leave. De asemenea, se realizeaza copierea fisierelor utilizate de grafana la calea indicata de SPRC_DVP.
+
+Fisierul stack.yml ilustreaza imaginea de ansamblu a implementarii enumarand toate serviciile:
+-mosquitto: serviciul brokerului de mesaje ce utilizeaza imaginea de la laborator
+-database: imaginea folosita este influxdb:1.8-alpine deoarece aceasta nu solicita in mod obligatoriu autentificarea. De asemenea, retentia datelor este default nelimitata.
+-adapter: componenta scrisa in python ce se conectaza la brokerul de mesaje pentru a prelua datele, a le prelucra si a le stoca in forma dorita in baza de date. 
+	Pentru conectarea la broker si la baza de date se utilizeaza paho.mqtt.client si InfluxDBClient. 
+	Se verifica daca exista deja o baza de date denumita 'tema3_db' si se creaza in caz contrar.
+  	La conectarea unui client se apeleaza metoda on_connect ce aboneaza clientul la toate topicurile.
+  	La primirea unui mesaj se apeleaza metoda on_message in care se vor adauga informatiile din mesaj in baza de date. Se ignora mesajele care nu contin o locatie si o statie si se construieste o intrare in baza de date cu urmatoarea structura:
+	{
+		"measurement": statie.metrica,
+		"tags": {
+			"location": locatie,
+			"station": statie
+		},
+		"fields": {
+			"value": valoare de tip int sau float
+		},
+		"timestamp": string ce contine timestampul
+	}
+	Pentru logging se apeleaza functia log ce construieste si afiseaza mesajul la stdout.
+-grafana: serviciu pentru vizualizarea datelor ce expune portul 80 si seteaza variabilele pentru
+autentificare GF_SECURITY_ADMIN_USER=asistent si GF_SECURITY_ADMIN_PASSWORD=grafanaSPRC2021.
+Pentru dashboarduri am folosit provisioning din grafana. Pentru aceasta se adauga in
+ /etc/grafana/provisioning urmatoarele:
+	/datasources -> datasources.yml (specifica sursa datelor, anume baza de date influxdb)
+	/dashboards  -> dashboard.yml (arata calea catre dashboards: /etc/grafana/provisioning/dashboards)
+		     -> upbIoTdata.json 
+		     -> battery.json
+		     
+Observatii:
+- Am utilizat 3 retele: mosquitto-adapter, adapter-database si database-grafana care ilustreaza serviciile incluse prin nume si se observa ca se respecta restrictiile de comunicare intre servicii (de exemplu adaptorul nu poate comunica cu grafana deoarece grafana nu se afla in nicio retea in care se afla si adaptorul, anume mosquitto-adapter si adapter-database)
+- Volumele utilizate pentru persistenta sunt influxdb_data si grafana_data
+
+Surse:
+https://grafana.com/docs/grafana/v8.5/datasources/influxdb/provision-influxdb/ - model datasource.yml
+https://grafana.com/docs/grafana/latest/administration/provisioning/ -  model dashboard.yml
+https://influxdb-python.readthedocs.io/en/latest/examples.html
+https://grafana.com/docs/grafana/latest/fundamentals/timeseries/
+

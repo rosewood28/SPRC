@@ -41,8 +41,8 @@ services:
         ports:
             - '80:3000'
         volumes:
-            - grafana:/var/lib/grafana
-            - ./provisioning/:/etc/grafana/provisioning
+            - grafana_data:/var/lib/grafana
+            - ${SPRC_DVP}/provisioning/:/etc/grafana/provisioning
         environment:
             - GF_SECURITY_ADMIN_USER=asistent
             - GF_SECURITY_ADMIN_PASSWORD=grafanaSPRC2021
@@ -53,7 +53,7 @@ services:
 
 volumes:
     influxdb_data:
-    grafana:
+    grafana_data:
 
 networks:
     mosquitto-adapter:
