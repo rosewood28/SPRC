@@ -1,7 +1,7 @@
 import paho.mqtt.client as mqtt
 from influxdb import InfluxDBClient
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 import os
 
 brokerHost = "mosquitto"
@@ -35,8 +35,8 @@ def on_message(client, userdata, msg):
 		timestamp_string = payload.get('timestamp')
 		log('Data timestamp is: ' + timestamp_string)
 	else:
-		timestmp = datetime.now()
-		timestamp_string = timestmp.strftime("%Y-%m-%d %H:%M:%S.%f")
+		timestmp = datetime.now(timezone.utc)
+		timestamp_string = str(timestmp)
 		log("Data timestamp is NOW")
 
 

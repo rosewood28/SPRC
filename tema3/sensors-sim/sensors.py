@@ -1,5 +1,5 @@
 import paho.mqtt.client as mqtt
-from datetime import datetime
+from datetime import datetime, timezone
 import random
 from time import sleep
 import json
@@ -26,7 +26,7 @@ def gen_msg(topic):
 	else:
 		# msg["topic"] = topic
 		msg["TMP"] = random.choice(list(range(3, 28)))
-		msg["timestamp"] = str(datetime.now())
+		msg["timestamp"] = str(datetime.now(timezone.utc))
 	
 	return msg
 
